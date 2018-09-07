@@ -21,6 +21,7 @@ class BlogsController < ApplicationController
   #投稿確認
   def confirm
     @blog = Blog.new(blog_params)
+    render :new if @blog.invalid?
   end
   #投稿編集
   def edit
@@ -41,6 +42,7 @@ class BlogsController < ApplicationController
 
   
   private
+  
     def blog_params
       params.require(:blog).permit(:content)
     end
