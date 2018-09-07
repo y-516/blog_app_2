@@ -1,0 +1,11 @@
+<h1>ブログ編集画面</h1>
+<%= form_with(model: @blog, local:true,) do |form| %>
+ <div>
+   <%=form.label:ブログ内容%>
+ </div>
+ <div>
+   <%=form.text_field:content%>
+ </div>
+ <%=form.submit '編集する'%>
+<%end%>
+<%=link_to("一覧画面へ",blogs_path)%>

@@ -1,0 +1,16 @@
+<h1>ブログ一覧画面</h1>
+<p><%= notice%></p>
+<table>
+    <tr>
+        <th>ブログ内容</th>
+    </tr>
+    
+    <% @blog.each do |blog| %>
+    <tr>
+        <td><%=blog.content%></td>
+        <td><%= link_to "ブログを編集する",edit_blog_path(blog.id)%></td>
+        <td><%= link_to "ブログを削除する",blog_path(blog.id),method: :delete%></td>
+    </tr>
+    <%end%>
+</table>
+<%= link_to("投稿画面へ",new_blog_path)%>
