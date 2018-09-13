@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action:set_blog,only:[:edit,:update,:destroy]
-  
+
   #一覧表示
   def index
     @blog = Blog.all.order(created_at: :desc)
@@ -39,16 +39,18 @@ class BlogsController < ApplicationController
     @blog.destroy
     redirect_to blogs_path,notice:"ブログを削除しました"
   end
+  #top
+  def top
+  end
 
-  
   private
-  
+
     def blog_params
       params.require(:blog).permit(:content)
     end
-    
+
     def set_blog
       @blog = Blog.find(params[:id])
     end
-  
+
 end

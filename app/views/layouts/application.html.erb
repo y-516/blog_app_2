@@ -7,8 +7,17 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <%= yield %>
-  </body>
+    <body>
+      <header class ="header">
+        <ul>
+          <li><a href="/">Top</a></li>
+          <li><a href="/blogs">一覧</a></li>
+          <li><a href="/blogs/new">投稿</a></li>
+        </ul>
+      </header>
+      <%= yield %>
+      <footer class="footer">
+        <p>Bootstrap_Series challenges</p>
+      </footer>
+    </body>
 </html>

@@ -1,3 +1,4 @@
+<div class="new">
 <% if @blog.errors.any? %>
     <div id="error_explanation">
       <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
@@ -12,11 +13,13 @@
 <h1>ブログ投稿画面</h1>
 <%= form_with(model: @blog, local:true,url: confirm_blogs_path) do |form| %>
  <div>
-   <%=form.label:ブログ内容%>
+   <h2><%=form.label:ブログ内容%></h2>
  </div>
  <div>
    <%=form.text_field:content%>
  </div>
- <%=form.submit 'ブログ投稿'%>
+<div class="btn btn-primary">
+ <%= form.submit 'ブログ投稿'%>
+</div>
 <%end%>
-<%=link_to("一覧画面へ",blogs_path)%>
+</div>

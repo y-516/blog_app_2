@@ -1,0 +1,103 @@
+// Place all the styles related to the blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+html{
+  font-size:62.5%;
+  min-height: 100%;
+  position: relative;
+}
+body{
+  min-height: calc(100% - 60px);
+  margin: 0;
+}
+//layouts
+.header{
+  margin:0;
+  height:100px;
+  width:100%;
+  background-color:#5D99FF;
+}
+.header ul{
+  margin:0;
+}
+.header li{
+  list-style :none;
+  float:left;
+  font-size:2.5rem;
+  margin-top:20px;
+  margin-left: 20px;
+}
+header a{
+  color:white;
+}
+.top{
+  height:1500px;
+  margin-bottom: 100px;
+  background-position: center;
+  background-size: cover;
+  background-image:url(<%= asset_path 'global-business-people-success-city-concepts-46459753.jpg' %>)
+}
+.top p{
+  font-size: 8rem;
+  text-align:center;
+  padding: 100px;
+  color:#5D99FF;
+  text-shadow: 0px 0px 20px rgba(255,255,0,1);
+  font-family:cursive;
+}
+.top li{
+  font-size:2rem;
+}
+.footer{
+  width:100%;
+  bottom: 0;
+  position: absolute;
+  margin:0;
+}
+.footer p{
+  height:100px;
+  width:100%;
+  font-size:2.5rem;
+  display: flex;
+	align-items: center;
+	justify-content: center;
+  color:white;
+  margin-bottom:0;
+  background-color:#5D99FF;
+}
+//index
+.index{
+  margin-bottom:100px;
+  text-align:center;
+}
+.index_table th{
+  text-align:center;
+  font-size: 2.5rem;
+}
+.index_table td{
+  font-size: 2rem;
+  margin: 5px;
+  text-align:center;
+}
+table{
+  margin-left:auto;
+  margin-right:auto;
+}
+//new
+.new{
+  text-align:center;
+}
+.new div{
+  margin: 5px;
+}
+//confirm
+.confirm{
+  text-align:center;
+}
+//edit
+.edit{
+  text-align:center;
+}
+.edit div{
+  margin: 5px;
+}
