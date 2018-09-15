@@ -1,17 +1,16 @@
-<div class="index">
-<h1>ブログ一覧画面</h1>
-<p><h2><%= notice%></h2></p>
-<table class ="index_table">
-    <tr>
-        <th>ブログ内容</th>
-    </tr>
-
-    <% @blog.each do |blog| %>
-    <tr>
-        <td><%=blog.content%></td>
-        <td class="btn btn-success"><%= link_to "編集する",edit_blog_path(blog.id) %></td>
-        <td class="btn btn-warning"><%= link_to "削除する",blog_path(blog.id),method: :delete%></td>
-    </tr>
-    <%end%>
-</table>
+<div class="container-fluid">
+  <div class="index">
+    <h1>ブログ一覧画面</h1>
+    <h2><%= notice%></h2>
+      <% @blog.each do |blog| %>
+        <div class="row">
+          <p class ="col-xs-12 col-md-6"><%=blog.content%></p>
+          <div  class="col-xs-12 col-md-6">
+            <p class="btn btn-success"><%= link_to "編集する",edit_blog_path(blog.id) %></p>
+            <p class="btn btn-warning"><%= link_to "削除する",blog_path(blog.id),method: :delete%></p>
+          </div>
+        </div>
+      <%end%>
+    </div>
+  </div>
 </div>

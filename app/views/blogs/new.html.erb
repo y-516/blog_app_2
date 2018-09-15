@@ -1,9 +1,8 @@
 <div class="new">
-<% if @blog.errors.any? %>
+  <% if @blog.errors.any? %>
     <div id="error_explanation">
       <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
       <ul>
-
       <% @blog.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
@@ -18,8 +17,8 @@
  <div>
    <%=form.text_field:content%>
  </div>
-<div class="btn btn-primary">
+ <div class="btn btn-primary">
  <%= form.submit 'ブログ投稿'%>
-</div>
+  </div>
 <%end%>
 </div>
