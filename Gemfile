@@ -41,6 +41,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'hirb'
   gem 'hirb-unicode'
+  gem 'bcrypt', '3.1.11'
 end
 
 group :development do

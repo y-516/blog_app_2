@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action:set_blog,only:[:edit,:update,:destroy]
+  before_action:require_sign_in!,only:[:new,:edit,:ahow,:destroy]
 
   #一覧表示
   def index
@@ -45,12 +46,16 @@ class BlogsController < ApplicationController
 
   private
 
-    def blog_params
-      params.require(:blog).permit(:content)
-    end
+  def blog_params
+    params.require(:blog).permit(:content)
+  end
 
-    def set_blog
-      @blog = Blog.find(params[:id])
-    end
+  def set_blog
+    @blog = Blog.find(params[:id])
+  end
+
+  def require_sign_in!
+    redirect_to new_session_path unless logged_in?
+  end
 
 end

@@ -3,19 +3,26 @@
   <head>
     <title>BlogApp</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
     <body>
       <header class ="header">
         <ul>
-          <li><a href="/">Top</a></li>
+          <li><a href="/blogs/top">トップ</a></li>
           <li><a href="/blogs">一覧</a></li>
           <li><a href="/blogs/new">投稿</a></li>
+          <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+          <div class="layouts_msg">
+          <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: "#{key}") %>
+          <% end %>
+          </div>
         </ul>
       </header>
+
       <%= yield %>
+
       <footer class="footer">
         <p>Bootstrap_Series challenges</p>
       </footer>

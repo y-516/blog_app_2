@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class=session_bak>
+  <div class ="sessions_link"><%= link_to "アカウント登録画面へ", new_user_path %></div>
+    <div class="sessions_new">
+      <div class="session_msg">
+      <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+      <% end %>
+      </div>
+      <h1>Bootstrap_Series challenges</h1>
+      <h1>ログイン画面</h1>
+      <div class="sessions_form">
+      <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+        <%= f.label :メールアドレス %>
+        <%= f.email_field :email %>
+        <%= f.label :パスワード %>
+        <%= f.password_field :password %>
+        <%= f.submit "ログイン" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
