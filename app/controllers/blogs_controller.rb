@@ -7,7 +7,6 @@ class BlogsController < ApplicationController
   def index
     @current_user = current_user
     @blog = Blog.all.order(created_at: :desc)
-    @current_user = current_user
   end
   #新規投稿
   def new

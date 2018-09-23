@@ -8,16 +8,15 @@
         <div class="row">
           <p class ="col-xs-12 col-md-6"><%=blog.content%></p>
           <div  class="col-xs-12 col-md-6">
-            <%if @current_user.id == blog.user_id%>
-            <p class="btn btn-info"><%= link_to "お気に入り",blog_path(blog.id) %></p>
-            <p class="btn btn-success"><%= link_to "編集する",edit_blog_path(blog.id) %></p>
-            <p class="btn btn-warning"><%= link_to "削除する",blog_path(blog.id),method: :delete%></p>
-            <%else%>
-            <p class="btn btn-info"><%= link_to "お気に入り",blog_path(blog.id) %></p>
+            <%if @current_user.id == blog.id%>
+              <p class="btn btn-info"><%= link_to "お気に入り",blog_path(blog.id) %></p>
+              <p class="btn btn-success"><%= link_to "編集する",edit_blog_path(blog.id) %></p>
+              <p class="btn btn-warning"><%= link_to "削除する",blog_path(blog.id),method: :delete%></p>
+              <%else%>
+              <p class="btn btn-info"><%= link_to "お気に入り",blog_path(blog.id) %></p>
             <%end%>
           </div>
         </div>
       <%end%>
-
     </div>
   </div>
