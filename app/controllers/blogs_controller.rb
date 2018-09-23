@@ -1,10 +1,13 @@
 class BlogsController < ApplicationController
   before_action:set_blog,only:[:edit,:update,:destroy]
   before_action:require_sign_in!,only:[:new,:edit,:ahow,:destroy]
+  before_action:current_user
 
   #一覧表示
   def index
+    @current_user = current_user
     @blog = Blog.all.order(created_at: :desc)
+    @current_user = current_user
   end
   #新規投稿
   def new
@@ -12,7 +15,8 @@ class BlogsController < ApplicationController
   end
   #投稿作成
   def create
-    @blog = Blog.create(blog_params)
+    @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id
       if @blog.save
     redirect_to blogs_path,notice:"ブログを作成しました"
       else
@@ -22,6 +26,7 @@ class BlogsController < ApplicationController
   #投稿確認
   def confirm
     @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id
     render :new if @blog.invalid?
   end
   #投稿編集
@@ -43,6 +48,12 @@ class BlogsController < ApplicationController
   #top
   def top
   end
+  #お気に入り画面
+  def show
+    @blog = Blog.find_by(id:params[:id])
+    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
+  end
+
 
   private
 

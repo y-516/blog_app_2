@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
      if user && user.authenticate(params[:session][:password])
        #ユーザーのブラウザ内のcookiesに暗号化されたユーザーIDが自動で生成
        session[:user_id] = user.id
-       flash[:notice] = 'ログインしました'
+       flash[:notice] = "#{user.name}さんでログインしました"
        redirect_to blogs_top_path
      else
        flash[:notice]='ログインに失敗しました'

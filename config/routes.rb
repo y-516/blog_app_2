@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'sessions#new'
+  resources :favorites, only: [:create, :destroy]
 
   get 'blogs/top'
   resources:sessions, only: [:new, :create, :destroy]

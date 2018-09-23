@@ -1,0 +1,15 @@
+<div class="blog_show_content">
+  <h1>お気に入り登録画面</h1>
+  <h1><%= @blog.content%></h1>
+  <!--current_userが登録したblogで無ければ以下if文実施  -->
+  <% unless @blog.user_id == current_user.id %>
+  <!--@favoriteにレコード有りなら'お気に入り解除する'表示  -->
+  <!--@favoriteがnilなら'お気に入りする'表示  -->
+    <% if @favorite.present? %>
+      <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+    <% else %>
+      <%= link_to 'お気に入りする', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' %>
+    <% end %>
+  <% end %>
+  <h2><%= link_to "ブログ一覧画面へ",blogs_path %></h2>
+</div>

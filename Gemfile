@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '3.1.11'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'rails-i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -41,6 +42,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'hirb'
   gem 'hirb-unicode'
+  gem 'dotenv-rails'
   # gem 'bcrypt', '3.1.11'
 end
 
