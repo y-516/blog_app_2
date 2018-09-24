@@ -3,7 +3,7 @@
     <h1>ブログ一覧画面</h1>
     <h2><%=@current_user.name%>さんでログイン中</h2>
     <h2><%= link_to "お気に入り一覧",user_path(@current_user.id) %></h2>
-    <h2><%= notice%></h2>
+    <!-- <h2><%= notice%></h2> -->
       <% @blog.each do |blog| %>
         <div class="row">
           <p class ="col-xs-12 col-md-6"><%=blog.content%></p>
