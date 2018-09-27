@@ -1,12 +1,11 @@
 <div class="container-fluid">
   <div class="index">
     <h1>ブログ一覧画面</h1>
-    <h2><%=@current_user.name%>さんでログイン中</h2>
-    <h2><%= link_to "お気に入り一覧",user_path(@current_user.id) %></h2>
+    <h1><%= notice %></h1>
+    <h2><%= link_to "#{@current_user.name}さんのお気に入り一覧",user_path(@current_user.id) %></h2>
       <% @blog.each do |blog| %>
         <div class="row">
           <p class ="col-xs-12 col-md-6"><%=blog.content%></p>
-          <!-- <p class ="col-xs-12 col-md-6"><%=blog.user.name%></p> -->
           <div  class="col-xs-12 col-md-6">
             <%if @current_user.id == blog.user_id%>
               <p class="btn btn-info"><%= link_to "お気に入り",blog_path(blog.id) %></p>
@@ -16,6 +15,9 @@
               <p class="btn btn-info"><%= link_to "お気に入り",blog_path(blog.id) %></p>
             <%end%>
           </div>
+            <div class ="up_image col-xs-12 col-md-12">
+              <%= image_tag blog.image %>
+            </div>
         </div>
       <%end%>
     </div>

@@ -1,6 +1,7 @@
 <div class="blog_show_content">
   <h1>お気に入り登録画面</h1>
   <h1><%= @blog.content%></h1>
+  <h1><%= image_tag @blog.image%></h1>
   <!--current_userが登録したblogで無ければ以下if文実施  -->
   <% unless @blog.user_id == current_user.id %>
   <!--@favoriteにレコード有りなら'お気に入り解除する'表示  -->

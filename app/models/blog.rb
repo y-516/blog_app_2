@@ -10,4 +10,6 @@ class Blog < ApplicationRecord
   # #through: :favoritesd で「favoritesを通過して」という意味
   # #source: :userで「userの情報を取得する」という意味
 
+  mount_uploader :image, ImageUploader
+
 end

@@ -8,17 +8,22 @@
   </head>
     <body>
       <header class ="header">
+
+        <div class ="left">
         <ul>
           <li><a href="/blogs/top">トップ</a></li>
           <li><a href="/blogs">一覧</a></li>
           <li><a href="/blogs/new">投稿</a></li>
           <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
-          <div class="layouts_msg">
-          <% flash.each do |key, value| %>
-          <%= content_tag(:div, value, class: "#{key}") %>
-          <% end %>
-          </div>
         </ul>
+        </div>
+
+          <div class="right">
+            <ul>
+              <li>ログイン中のユーザー<%=@current_user.name%>さん</li>
+              <%= image_tag @current_user.image %>
+            </ul>
+          </div>
       </header>
 
       <%= yield %>

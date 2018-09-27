@@ -1,6 +1,7 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .users_link{
   font-size: 30px;
   margin-top :0;
@@ -8,15 +9,29 @@
 .users_new{
   text-align:center;
 }
-.users_form{
-  margin: 100px;
+.error{
+  text-align:center;
 }
+
+.users_form {
+  text-align:center;
+}
+
+label {
+    margin-right: 20px;
+    width:150px;
+}
+
+input[type=file] {
+    display: inline;
+}
+
 .users_show{
   text-align:center;
   padding-top: 100px;
 }
 .users_show_bak{
-  height:1500px;
+  height:auto;
   background-position: center;
   background-size: cover;
   background-image:url(<%= asset_path 'happy-man.jpg' %>)
@@ -33,5 +48,8 @@
   background-position: center;
   background-size: cover;
   background-image:url(<%= asset_path 'mig.jpeg' %>)
-
+}
+.users_show img{
+  height:300px;
+  width: 300px;
 }

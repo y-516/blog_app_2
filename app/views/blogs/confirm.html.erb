@@ -2,7 +2,9 @@
   <h3>以下の内容で、送信します</h3>
   <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
     <%= form.hidden_field :content %>
-    <h2>ブログ内容:<%= @blog.content %></h2>
+    <%= form.hidden_field :image_cache %>
+    <h2>ブログ投稿内容:<%= @blog.content %></h2>
+    <h2>画像:<%= image_tag @blog.image %></h2>
     <div class="btn btn-primary">
     <%= form.submit  "登録する" %>
     </div>
