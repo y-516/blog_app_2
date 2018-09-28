@@ -2,6 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.users_show_all{
+  height: 100%;
+  background-image:url(<%= asset_path 'happy-man.jpg' %>);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size:100% auto;
+
+}
+
+.users_show_content{
+  text-align:center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size:100% auto;
+  background-image:url(<%= asset_path 'happy-man.jpg' %>);
+}
+.users_show_content img{
+  height:300px;
+  width: 300px;
+  margin-bottom: 20px;
+}
+.users_show_content h2{
+  margin-top: 0;
+}
+.users_show_content P{
+  font-size:5rem;
+  margin-bottom: 0;
+}
+///////////////////////////////////
 .users_link{
   font-size: 30px;
   margin-top :0;
@@ -25,31 +54,10 @@ label {
 input[type=file] {
     display: inline;
 }
-
-.users_show{
-  text-align:center;
-  padding-top: 100px;
-}
-.users_show_bak{
-  height:auto;
-  background-position: center;
-  background-size: cover;
-  background-image:url(<%= asset_path 'happy-man.jpg' %>)
-}
-.users_show h1{
-  font-size: 50px;
-}
-.users_show p{
-  font-size: 40px;
-}
 .users_bak{
   margin-top :0;
   height:1500px;
   background-position: center;
   background-size: cover;
   background-image:url(<%= asset_path 'mig.jpeg' %>)
-}
-.users_show img{
-  height:300px;
-  width: 300px;
 }
