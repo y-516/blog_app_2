@@ -1,5 +1,5 @@
 <div class="edit">
-  <h1>ブログ編集画面</h1>
+  <h1>ブログ・画像編集画面</h1>
   <%= form_with(model: @blog, local:true,) do |form| %>
      <div>
        <h2><%=form.label:ブログ内容%></h2>
@@ -7,6 +7,16 @@
      <div>
        <%=form.text_field:content%>
      </div>
+
+     <div>
+       <h2><%=form.label:画像 %></h2>
+       <h2><%= image_tag @blog.image %></h2>
+     </div>
+     <div>
+       <%= form.file_field :image%>
+     </div>
+
+
      <div class="btn btn-success">
        <%=form.submit '編集する'%>
     </div>
